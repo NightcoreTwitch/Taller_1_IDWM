@@ -1,4 +1,7 @@
-﻿namespace Backend.Src.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using Backend.Src.Models.UserModel;
+
+namespace Backend.Src.Data;
 
 public class DataContext : DbContext
 {
