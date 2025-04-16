@@ -2,9 +2,9 @@
 
 public class UserMapper
 {
-    public static UserDTO => MapToUserDTO(RegisterDTO registerDTO)
+    public static User => MapToUserDTO(RegisterDTO registerDTO)
     {
-        return new UserDTO
+        return new User
         {
             Names = registerDTO.Names,
             LastNames = registerDTO.LastNames,
@@ -14,7 +14,7 @@ public class UserMapper
             Password = registerDTO.Password
         };
     }
-    public static User MapToUser(UserDTO userDTO)
+    public static User => MapToUser(UserDTO userDTO)
     {
         return new User
         {
