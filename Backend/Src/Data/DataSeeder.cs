@@ -25,8 +25,8 @@ public class DataSeeder
             LastNames = "Mancilla",
             Email = "ignacio.mancilla@gmail.com",
             PhoneNumber = "957519245",
-            BirthDay = "2002-08-31"
-            Password = "Pa$$word2025"
+            BirthDay = "2002-08-31",
+            Password = "Pa$$word2025",
         }
 
         var faker = new Faker<User>()
