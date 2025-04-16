@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Backend.Src.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20250416011921_FirstMigrations")]
-    partial class FirstMigrations
+    [Migration("20250416192044_SecondMigrations")]
+    partial class SecondMigrations
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -54,7 +54,7 @@ namespace Backend.Src.Data.Migrations
                     b.HasIndex("UserId")
                         .IsUnique();
 
-                    b.ToTable("Adress");
+                    b.ToTable("Adresses");
                 });
 
             modelBuilder.Entity("Backend.Src.Models.User", b =>

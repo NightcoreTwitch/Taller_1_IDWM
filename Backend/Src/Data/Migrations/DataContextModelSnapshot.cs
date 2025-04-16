@@ -51,7 +51,7 @@ namespace Backend.Src.Data.Migrations
                     b.HasIndex("UserId")
                         .IsUnique();
 
-                    b.ToTable("Adress");
+                    b.ToTable("Adresses");
                 });
 
             modelBuilder.Entity("Backend.Src.Models.User", b =>
