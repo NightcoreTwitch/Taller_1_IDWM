@@ -2,7 +2,7 @@
 
 public class UserMapper
 {
-    public static User => MapToUserDTO(RegisterDTO registerDTO)
+    public static User => MapToUser(RegisterDTO registerDTO)
     {
         return new User
         {
