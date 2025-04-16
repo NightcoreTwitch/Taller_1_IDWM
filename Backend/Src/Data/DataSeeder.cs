@@ -46,7 +46,7 @@ public class DataSeeder
         if (!context.Adresses.Any()){
             var adminAdress1 = new Adress(){
                 Street = "Hernan Cortes",
-                Number = 2637,
+                Number = "2637",
                 City = "Calama",
                 Region = "Antofagasta",
                 ZipCode = "1390000",
