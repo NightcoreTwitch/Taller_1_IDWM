@@ -1,5 +1,7 @@
 ﻿using System;
 using Bogus;
+using Microsoft.EntityFrameworkCore;
+using Backend.Src.Models;
 
 namespace Backend.Src.Data;
 
@@ -25,14 +27,13 @@ public class DataSeeder
             LastNames = "Mancilla",
             Email = "ignacio.mancilla@gmail.com",
             PhoneNumber = "957519245",
-            BirthDay = "2002-08-31",
+            BirthDate = new DateOnly(2002, 08, 31),
             Password = "Pa$$word2025"
         };
 
         var faker = new Faker<User>()
-            .RuleFor(u => u.Id, f => Guid.NewGuid())
-            .RuleFor(u => u.Names, f => f.Name.Names())
-            .RuleFor(u => u.LastNames, f => f.Name.LastName())
+            .RuleFor(u => u.Names, f => f.Person.FirstName())
+            .RuleFor(u => u.LastNames, f => f.Person.LastName())
             .RuleFor(u => u.Email, f => f.Internet.Email())
             .RuleFor(u => u.PhoneNumber, f => f.Phone.PhoneNumber())
             .RuleFor(u => u.BirthDate, f => f.Date.Past(18))

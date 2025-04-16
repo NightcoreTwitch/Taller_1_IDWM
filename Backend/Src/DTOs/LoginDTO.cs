@@ -1,4 +1,6 @@
-﻿namespace Backend.Src.DTOs;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Backend.Src.DTOs;
 
 public class LoginDTO
 {

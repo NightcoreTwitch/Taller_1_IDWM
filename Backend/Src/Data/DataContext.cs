@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Backend.Src.Models.UserModel;
+using Backend.Src.Models;
 
 namespace Backend.Src.Data;
 
