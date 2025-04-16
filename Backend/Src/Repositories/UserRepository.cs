@@ -15,6 +15,17 @@ public class UserRepository : IUserRepository
         await _context.SaveChangesAsync();
         return UserMapper.MapToUserDTO(newUser);
     }
+    public async Task<UserDTO> LoginAsync(LoginDTO user)
+    {
+        var existingUser = await _context.Users.FirstOrDefaultAsync(u => 
+            u.Email == user.Email &&
+            u.Password == user.Password);
+        if (existingUser == null)
+        {
+            return null;
+        }
+        return UserMapper.MapToUserDTO(existingUser);
+    }
     public async Task<UserDTO> GetUserByEmailAsync(string email)
     {
         var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
