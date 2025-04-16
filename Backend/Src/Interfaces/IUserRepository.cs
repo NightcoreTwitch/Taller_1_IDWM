@@ -1,5 +1,5 @@
 ﻿using System.Threading.Tasks;
-namespace Backend;
+namespace Backend.Src.Interfaces;
 
 public interface IUserRepository
 {
