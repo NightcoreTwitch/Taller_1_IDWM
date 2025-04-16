@@ -1,4 +1,4 @@
-﻿namespace Backend;
+﻿namespace Backend.Src.Models;
 
 public class Adress
 {
