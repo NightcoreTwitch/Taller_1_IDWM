@@ -26,8 +26,8 @@ public class DataSeeder
             Email = "ignacio.mancilla@gmail.com",
             PhoneNumber = "957519245",
             BirthDay = "2002-08-31",
-            Password = "Pa$$word2025",
-        }
+            Password = "Pa$$word2025"
+        };
 
         var faker = new Faker<User>()
             .RuleFor(u => u.Id, f => Guid.NewGuid())
