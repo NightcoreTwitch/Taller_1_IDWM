@@ -36,7 +36,7 @@ public class DataSeeder
             .RuleFor(u => u.LastNames, f => f.Name.LastName())
             .RuleFor(u => u.Email, f => f.Internet.Email())
             .RuleFor(u => u.PhoneNumber, f => f.Phone.PhoneNumber())
-            .RuleFor(u => u.BirthDate, f => f.Date.Past(18))
+            .RuleFor(u => u.BirthDate, f => DateOnly.FromDateTime(f.Date.Past(18, DateTime.Now)))
             .RuleFor(u => u.Password, f => f.Internet.Password());
 
         var users = faker.Generate(9);
