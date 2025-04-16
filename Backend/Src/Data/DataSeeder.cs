@@ -1,7 +1,7 @@
 ﻿using System;
 using Bogus;
 
-namespace Backend;
+namespace Backend.Src.Data;
 
 public class DataSeeder
 {

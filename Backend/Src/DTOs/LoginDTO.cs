@@ -1,4 +1,4 @@
-﻿namespace Backend;
+﻿namespace Backend.Src.DTOs;
 
 public class LoginDTO
 {

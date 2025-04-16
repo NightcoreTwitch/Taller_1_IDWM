@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Company.ClassLibrary1;
+namespace Backend.Src.Models;
 
 public class User
 {

@@ -1,4 +1,4 @@
-﻿namespace Backend;
+﻿namespace Backend.Src.Data;
 
 public class DataContext : DbContext
 {
