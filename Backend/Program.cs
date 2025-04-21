@@ -3,15 +3,14 @@ using dotenv.net;
 using Microsoft.EntityFrameworkCore;
 using Backend.Src.Data;
 using Backend.Src.Models;
+using Backend.Src.Interfaces;
+using Backend.Src.Repositories;
 
 DotEnv.Load();
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
 builder.Services.AddControllers();
-builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<DataContext>(options =>
@@ -27,6 +26,8 @@ builder.Services.AddCors(options =>
         });
 });
 
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+
 var app = builder.Build();
 
 DataSeeder.InitDb(app);
@@ -37,12 +38,10 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
 }
 
-app.UseHttpsRedirection();
-
 app.UseSwagger();
 app.UseSwaggerUI();
-app.UseAuthentication();
-app.UseAuthorization();
-app.UseHttpsRedirection();
+//app.UseAuthentication();
+//app.UseAuthorization();
+//app.UseHttpsRedirection();
 app.MapControllers();
 app.Run();
