@@ -1,4 +1,8 @@
 ﻿using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using Backend.Src.Data;
+using Backend.Src.DTOs;
+
 namespace Backend.Src.Interfaces;
 
 public interface IUserRepository
