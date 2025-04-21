@@ -21,6 +21,7 @@ public class RegisterDTO
     [MinLength(9, ErrorMessage = "Phone number must be at least 9 digits long.")]
     public required string PhoneNumber { get; set; }
     [Required(ErrorMessage = "Birth date is required.")]
+
     public required DateOnly BirthDate { get; set; }
     [Required(ErrorMessage = "Password is required.")]
     [MinLength(8, ErrorMessage = "Password must be at least 8 characters long.")]
