@@ -37,6 +37,10 @@ public class UserRepository : IUserRepository
     public async Task<UserDTO> GetUserByEmailAsync(string email)
     {
         var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
+        if (user == null)
+        {
+            return null;
+        }
         return UserMapper.MapToUserDTO(user);
     }
 }
