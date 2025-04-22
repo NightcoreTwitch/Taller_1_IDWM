@@ -2,7 +2,6 @@
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
-using Backend.Src.DTOs;
 using Backend.Src.Interfaces;
 using Backend.Src.Models;
 
@@ -17,21 +16,22 @@ public class TokenRepository : ITokenRepository
         _configuration = configuration;
     }
 
-    public async Task<string> CreateTokenAsync(User user)
+    public async Task<string> GenerateTokenAsync(User user)
     {
         var claims = new List<Claim>
         {
             new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-            new Claim(ClaimTypes.Name, user.UserName)
+            new Claim(ClaimTypes.Name, user.Names),
+            new Claim(ClaimTypes.Email, user.Email)
         };
 
-        var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Token:Key"]));
+        var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
         var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
         var tokenDescriptor = new SecurityTokenDescriptor
         {
             Subject = new ClaimsIdentity(claims),
-            Expires = DateTime.Now.AddDays(7),
+            Expires = DateTime.Now.AddDays(1),
             SigningCredentials = creds
         };
 
