@@ -6,5 +6,4 @@ public interface IUserRepository
 {
     Task<string> AddUserAsync(RegisterDTO user);
     Task<string> LoginAsync(LoginDTO user);
-    Task<UserDTO> GetUserByEmailAsync(string email);
 }
