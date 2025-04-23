@@ -57,7 +57,8 @@ public class AuthController : ControllerBase
             {
                 return BadRequest("User role assignment failed.");
             }
-            var token = await _tokenRepository.GenerateTokenAsync(newUser);
+            var roleNewUser = await _userManager.GetRolesAsync(newUser);
+            var token = await _tokenRepository.GenerateTokenAsync(newUser, roleNewUser);
             return Ok(new { FullName = newUser.Names + " " + newUser.LastNames, Email = newUser.Email, Token = token });
         }
         return BadRequest("User creation failed.");
@@ -84,7 +85,8 @@ public class AuthController : ControllerBase
         {
             return Unauthorized("User or password is incorrect.");
         }
-        var token = await _tokenRepository.GenerateTokenAsync(user);
+        var role = await _userManager.GetRolesAsync(user);
+        var token = await _tokenRepository.GenerateTokenAsync(user, role);
         return Ok(new { Token = token });
     }
 }
