@@ -37,7 +37,6 @@ namespace Backend.Src.Data.Migrations
                     Names = table.Column<string>(type: "TEXT", nullable: false),
                     LastNames = table.Column<string>(type: "TEXT", nullable: false),
                     BirthDate = table.Column<DateOnly>(type: "TEXT", nullable: false),
-                    Password = table.Column<string>(type: "TEXT", nullable: false),
                     Status = table.Column<string>(type: "TEXT", nullable: false),
                     CreatedAt = table.Column<DateOnly>(type: "TEXT", nullable: false),
                     LastLogin = table.Column<DateOnly>(type: "TEXT", nullable: false),

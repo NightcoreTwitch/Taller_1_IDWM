@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Backend.Src.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20250423002012_ThirdMigrations")]
+    [Migration("20250423010533_ThirdMigrations")]
     partial class ThirdMigrations
     {
         /// <inheritdoc />
@@ -106,10 +106,6 @@ namespace Backend.Src.Data.Migrations
 
                     b.Property<string>("NormalizedUserName")
                         .HasMaxLength(256)
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Password")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("PasswordHash")
