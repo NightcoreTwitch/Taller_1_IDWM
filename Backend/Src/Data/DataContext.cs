@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace Backend.Src.Data;
 
-public class DataContext : IdentityDbContext<User, IdentityRole<int>, int>
+public class DataContext(DbContextOptions<DataContext> options) : IdentityDbContext<User, IdentityRole<int>, int> (options)
 {
     public DbSet<Adress> Adresses { get; set; }
     protected override void OnModelCreating(ModelBuilder builder)
