@@ -16,7 +16,6 @@ public class UserMapper
             Email = registerDTO.Email,
             PhoneNumber = registerDTO.PhoneNumber,
             BirthDate = registerDTO.BirthDate,
-            Password = registerDTO.Password
         };
     }
     public static User MapToUser(UserDTO userDTO)
@@ -28,7 +27,6 @@ public class UserMapper
             Email = userDTO.Email,
             PhoneNumber = userDTO.PhoneNumber,
             BirthDate = userDTO.BirthDate,
-            Password = userDTO.Password
         };
     }
     public static UserDTO MapToUserDTO(User user)
@@ -40,7 +38,6 @@ public class UserMapper
             Email = user.Email,
             PhoneNumber = user.PhoneNumber,
             BirthDate = user.BirthDate,
-            Password = user.Password
         };
     }
 }
