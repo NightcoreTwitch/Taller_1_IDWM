@@ -69,6 +69,7 @@ builder.Services.AddCors(options =>
 var app = builder.Build();
 
 DataSeeder.InitDb(app);
+DataSeeder.AdressDb(app);
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
