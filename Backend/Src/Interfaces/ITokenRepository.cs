@@ -4,5 +4,5 @@ namespace Backend.Src.Interfaces;
 
 public interface ITokenRepository
 {
-    Task<string> GenerateTokenAsync(User user);
+    Task<string> GenerateTokenAsync(User user, string roleId);
 }
