@@ -11,7 +11,6 @@ public class User : IdentityUser<int>
     public required string Names { get; set; }
     public required string LastNames { get; set; }
     public required DateOnly BirthDate { get; set; }
-    public required string Password { get; set; }
     // Only Admins can view this field
     public string Status { get; set; } = "Active";
     public DateOnly CreatedAt { get; set; } = DateOnly.FromDateTime(DateTime.Now);
