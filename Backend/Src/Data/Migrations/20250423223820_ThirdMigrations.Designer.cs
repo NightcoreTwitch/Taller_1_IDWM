@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Backend.Src.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20250423010533_ThirdMigrations")]
+    [Migration("20250423223820_ThirdMigrations")]
     partial class ThirdMigrations
     {
         /// <inheritdoc />
