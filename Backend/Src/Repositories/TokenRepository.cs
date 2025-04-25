@@ -16,13 +16,13 @@ public class TokenRepository : ITokenRepository
         _configuration = configuration;
     }
 
-    public async Task<string> GenerateTokenAsync(User user)
+    public async Task<string> GenerateTokenAsync(User user, string roleId)
     {
         var claims = new List<Claim>
         {
-            new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-            new Claim(ClaimTypes.Name, user.Names),
-            new Claim(ClaimTypes.Email, user.Email)
+            new Claim(ClaimTypes.Name, user.Names + " " + user.LastNames),
+            new Claim(ClaimTypes.Email, user.Email),
+            new Claim(ClaimTypes.Role, roleId),
         };
 
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
